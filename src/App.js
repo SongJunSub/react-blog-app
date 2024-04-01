@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+
+    const post = "강남 우동 맛집";
+
+    const [title, b] = useState(["Java", "Kotlin", "Go"]);
+    const [likes, increaseLikes] = useState(0);
+
+    return (
+        <div className="App">
+            <div className="black-nav">
+                <h2>Jun's Blog</h2>
+            </div>
+
+            <div className="list">
+                <h4>{title[0]} <span onClick={() => {increaseLikes(likes + 1)}}>💛</span> {likes}</h4>
+                <p>2024. 04. 02</p>
+            </div>
+        </div>
+    );
+
 }
 
 export default App;
